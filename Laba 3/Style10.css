@@ -1,0 +1,23 @@
+a{
+    text-decoration: none;
+    color: rgb(100, 49, 26);
+    font-family: "Calibri";
+    }
+.list li{
+          list-style-type: none;       
+          display: inline-block; 
+          text-align: center; 
+          border-style: solid;
+          padding-top: 5px;
+          width: 75px;  
+          height: 25px;
+          border-color: rgb(5, 210, 210);
+        }
+.list{
+        background-color: rgb(5, 210, 210);
+        }
+.list li:hover{
+                background-color: rgb(194, 6, 6);
+                border-color: rgb(194, 6, 6);
+                }
+
