@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <input id="inp" type="text" onblur="func(this)">
+    <p>3</p>
+    <p>5</p>
+    <p>6</p>
+    <script>
+        let inp = document.getElementById('inp');
+        function func(){
+            let text = inp.value;
+            let word = text.split(' ');
+            let kol = 0;
+            word.forEach(element => {
+                kol++;
+            });
+            alert("Количество слов: "+ kol);
+        }
+        let elem = document.getElementsByTagName('p');
+        for (let i = 0; i < elem.length; i++) {
+            elem[i].addEventListener('click', sqr);
+        }
+        function sqr() {
+            this.innerHTML = this.innerHTML * this.innerHTML;
+        }
+    </script>
+</body>
+</html>
