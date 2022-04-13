@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+            var Date = new Date();
+            document.write(Date.getDate()+'<br>');
+            document.write((Date.getMonth()+1)+'<br>');
+            document.write(Date.getFullYear()+'<br>'); 
+            function func_date(num)
+            {
+                if (num < 10)
+                { 
+		            return '0' + num;
+	            } else 
+                {
+		            return num;
+	            }
+            } 
+            document.write(Date.getHours()+':'+Date.getMinutes()+':'+Date.getSeconds()+' '+func_date(Date.getDate())+'.'+func_date(Date.getMonth()+1)+'.'+Date.getFullYear());  
+        </script>   
+    </body>
+</html>
