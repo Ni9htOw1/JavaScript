@@ -1,0 +1,39 @@
+.css {
+	position: absolute;
+	background: aqua;
+	width:30px;
+	height:30px;
+	left: 100px;
+	top: 90px;
+	border:solid aqua;
+	border-radius: 50%;
+    animation: change-background 4s ease infinite;
+}
+
+#circle {
+	position: absolute; 
+	left: 150px; 
+	top: 145px;  
+	width: 150px; 
+	height: 150px;
+	border:solid aqua;
+	border-radius: 50%;	
+}
+
+@keyframes change-background {
+    0% {
+        background: aqua;
+    }
+    25% {
+        background: rgb(100, 255, 255);
+    }
+    50% {
+        background: rgb(200, 255, 255);
+    }
+    75% {
+        background: rgb(100, 255, 255);
+    }
+    100% {
+        background: aqua;
+    }
+  }
