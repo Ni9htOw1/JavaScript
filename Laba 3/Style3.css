@@ -1,0 +1,16 @@
+.border1{ 
+    border-style: solid;
+    border-color: aqua;
+    width: 360px;
+    height: 360px; 
+    margin: 70px;     
+}
+
+.border2{
+    border-style: solid;
+    border-color: silver;
+    width: 430px;
+    height: 360px; 
+    margin: 70px;
+    padding: 35px;       
+}
