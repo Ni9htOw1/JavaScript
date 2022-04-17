@@ -7,7 +7,7 @@
 	top: 90px;
 	border:solid aqua;
 	border-radius: 50%;
-    animation: change-background 4s ease infinite;
+    	animation: change-background 4s ease infinite alternate;
 }
 
 #circle {
@@ -21,19 +21,10 @@
 }
 
 @keyframes change-background {
-    0% {
+    to {
         background: aqua;
     }
-    25% {
-        background: rgb(100, 255, 255);
-    }
-    50% {
+    from {
         background: rgb(200, 255, 255);
-    }
-    75% {
-        background: rgb(100, 255, 255);
-    }
-    100% {
-        background: aqua;
     }
   }
