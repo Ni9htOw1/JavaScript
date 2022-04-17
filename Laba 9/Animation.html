@@ -9,7 +9,7 @@
     <div class="css" onClick="animation({}, this);"></div> 
     <script>
         function animation(args, elem) { 
-        var $ = {
+        var val = {
             radius: 150, 
             speed:40
         }
@@ -17,8 +17,8 @@
         var s = 2 * Math.PI / 180; 
         setInterval(function() { 
             f += s;
-            elem.style.top = 210 - $.radius * Math.cos(f) + 'px';
-            elem.style.left = 210 + $.radius * Math.sin(f)  + 'px';
+            elem.style.top = 210 - val.radius * Math.cos(f) + 'px';
+            elem.style.left = 210 + val.radius * Math.sin(f)  + 'px';
         }, $.speed)
     }
     </script> 
