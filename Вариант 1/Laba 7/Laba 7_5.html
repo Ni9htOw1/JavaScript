@@ -1,0 +1,66 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="parent">
+            Elem 5
+            <br>
+            <span class="child">55</span>
+        </div>
+        <input type="button" value="delete" onclick="del(this)" class="knopka">
+        <hr>
+        <ol class="list">
+            <li> 1</li>
+            <li> 2</li>
+            <li> 3</li>
+        </ol>
+        <input type="button" value="removeChild" class="btn" onclick="remove(this)">
+        <hr>
+        <input type="button" value="Push" class="button" onclick="del2(this)" >
+        <hr>
+        <ol class="task30">
+            <li class="task301">1</li>
+            <li class="task301">2</li>
+            <li class="task301">3</li>
+        </ol>
+        <hr>
+        <input type="text" id="id31">
+        <input type="button" value="clone" class="btn31" onclick="func31(this)">  
+        <script>
+            const btn = document.querySelector('.knopka');
+            const parent = document.querySelector('.parent');
+            const child = document.querySelector('.child');
+            function del() {
+            	parent.removeChild(child);
+        	}
+			const Btn = document.querySelector('.btn');
+            const Ol = document.querySelector('.list');
+            const Last = Ol.lastElementChild;
+            function remove() {
+				Ol.removeChild(Last);
+        	}  
+			const button = document.querySelector('.button');
+		    function del2() {
+                const Parent = button.parentElement;
+                Parent.removeChild(button);
+            }
+			const getLiList30 = document.querySelectorAll('.task301');
+        	for (let i = 0; i < getLiList30.length; i += 1) {
+        		getLiList30[i].addEventListener('click', func30);
+        	}
+        	function func30() {
+                const getParent30 = this.parentElement;
+                getParent30.removeChild(this);
+            }
+			const Input = document.getElementById('id31');
+        	const Btn31 = document.querySelector('.btn31');
+            Parent = Input.parentElement;
+        	function func31() {
+                const clone31 = Input.cloneNode(true);
+                Parent.appendChild(clone31);
+			}
+        </script> 
+    </body>
+</html>

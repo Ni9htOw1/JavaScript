@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <input type="text" onblur="func1(this)" id="inp">
+    <hr>
+    <input type="text" id="len" value="Введите длинну строки">
+    <input type="text" onblur="func2(this)" id="inp2">
+    <script>
+        let inp = document.getElementById('inp');
+        function func1(){
+            let num = inp.value;
+            if (num>=1 && num<=100){
+                inp.style.color = "green";
+            } 
+            else {
+                inp.style.color = "red";
+            }
+        }
+        let len = document.getElementById('len');
+        let inp2 = document.getElementById('inp2');
+        function func2(){
+            let leng = len.value;
+            let str = inp2.value;
+            if (str.length == leng){
+                inp2.style.color = "green";
+            } 
+            else {
+                inp2.style.color = "red";
+            } 
+        }
+    </script>
+</body>
+</html>

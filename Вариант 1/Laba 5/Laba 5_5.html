@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+          let date = prompt("Введите дату (xx.yy.zz):");
+          let month = Number(date[3]+date[4]);
+          switch(month){
+            case 1:
+            case 2:
+            case 12: alert("Зима");
+            break;
+                case 3:
+                case 4:
+                case 5: alert("Весна");
+                break;
+                    case 6:
+                    case 7:
+                    case 8: alert("Лето");
+                    break;
+            default: alert("Осень");
+          }
+        </script>   
+    </body>
+</html>

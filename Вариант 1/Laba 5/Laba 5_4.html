@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+            let simple =[];
+            let j=0;
+            for (let i=3; i<100; i++)
+            {
+                let tr = true;
+                for(let k=2; k<i; k++)
+                {
+                    if(i%k==0) 
+                    {
+                        tr = false;
+                        break;
+                    }  
+                }
+                if (tr)
+                {
+                    simple[j] = i;
+                    j++;
+                }
+            }
+            document.write(simple);
+        </script>   
+    </body>
+</html>

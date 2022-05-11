@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>Hello</p>
+        <script>
+            let mass = [1,2,3,4,5,6,7,8,9,10];
+            let ul =document.createElement('ul');
+            for(let i = 0; i < mass.length; i++){
+                let li = document.createElement('li');
+                li.innerHTML = mass[i];
+                ul.appendChild(li);
+            }
+            document.body.append(ul);
+        </script> 
+    </body>
+</html>

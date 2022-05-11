@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div>
+        <input type="text" class="cls">
+        <input type="text" class="cls">
+        <input type="text" class="cls">
+        <input type="button" value="summ" id="button">
+    </div>
+    <hr>
+    <div>
+        <input type="text" id="word">
+        <br>
+        <input type="button" id="but" onclick="palindrom(this)" value="Проверка на палиндром">
+    </div>
+
+    <script>
+        let input = document.getElementById('input');
+        let elem1 = document.getElementsByClassName('cls');
+        let button = document.getElementById('button');
+        button.addEventListener("click", func);
+        function func() {
+            let sum = 0;
+            for (var i = 0; i < elem1.length; i++) {
+                sum += +elem1[i].value;
+            }
+            let inp4 = document.createElement('input');
+            inp4.value = sum; 
+            let parent = button.parentElement;
+            parent.appendChild(inp4);
+            button.removeEventListener("click", func);
+        }
+        let inp = document.getElementById('word');
+        function palindrom() {
+            let word = inp.value;
+            let arr = word.split('');
+	        let arr2 = word.split('').reverse();
+            for(let i=0; i < word.length; i++){
+               if(arr[i]!==arr2[i]){
+                alert('это слово не палиндром');
+                return;
+               } 
+            }
+            alert('это слово палиндром');
+        }
+    </script>
+</body>
+</html>

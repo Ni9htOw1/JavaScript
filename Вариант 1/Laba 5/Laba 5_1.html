@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+            let age = prompt("Введите возраст:"); 
+            let sex = prompt("Введите пол(м/ж):");
+            while (sex !='м'&& sex !='ж')
+            {
+                sex = prompt("Введите пол(м/ж):"); 
+            }
+            if(age >= 14 && age <= 25 && sex == 'м')
+            {
+                document.write('Добрый день, молодой человек');
+            }
+            else if (age >= 14 && age <= 25 && sex == 'ж')
+            {
+                document.write('Приветствуем юную даму');
+            }
+            else
+            {
+                document.write('Привет!');
+            }
+        </script>   
+    </body>
+</html>

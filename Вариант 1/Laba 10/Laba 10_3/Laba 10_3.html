@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>	
+    <ul id="test">
+        <li class="question">
+            JavaScript это тоже самое что и Java?
+            <ul class="var">
+                <li>
+                    <label>
+                        <input type="radio" name="question1" data-true="">
+                        Нет.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="question1">
+                        Да.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="question1">
+                        Когда как
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li class="question">
+            Сколько параментров можно передавать в фукнцию?
+            <ul class="var">
+                <li>
+                    <label>
+                        <input type="radio" name="question2">
+                        Только столько, сколько указано при ее созданиию
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="question2">
+                        Минимум 1.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="question2" data-true="">
+                        Сколько угодно.
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li class="question">
+            Какой правильный способ для комментариев в JavaScript?
+            <ul class="var">
+                <li>
+                    <label>
+                        <input type="radio" name="question3">
+                        ' Это комментарий.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="question3">
+                        // Это комментарий.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="question3" data-true="">
+                        &lt;!-- Это комментарий. --&gt;
+                    </label>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <input type="button" id="check" value="Проверить" onclick="checkAnswers(this)">	
+</body>
+</html>

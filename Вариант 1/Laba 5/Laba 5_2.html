@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <script>
+            let num = Math.floor(Math.random()*(100-10)+10);
+            let text = prompt("Введите текст размером не менее "+num+" символов:"); 
+            let kol = text.length; 
+            while(kol < num)
+            {
+                text = prompt("Введите текст размером не менее "+num+" символов:"); 
+            }
+            let stop1 = text.includes("был");
+            let stop2 = text.includes("имеет"); 
+            let stop3 = text.includes("есть");
+            let nal;
+            if (stop1 || stop2 || stop3)
+            {
+                nal = ("Слова «был», «имеет», «есть» есть в тексте");
+            }
+            else 
+            {
+                nal = ("Слов «был», «имеет», «есть» нет в тексте"); 
+            }
+            document.write("Длина текста: "+kol+". "+nal+'.');
+        </script>   
+    </body>
+</html>

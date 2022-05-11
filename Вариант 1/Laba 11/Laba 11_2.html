@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>	
+	<div id="game">
+		<input type="button" id="start" value="Начать">
+		<div id="timer">Начиная с "1" нажимайте на числа до тех пор, пока не дойдете до последнего.</div>
+		<table id="table"></table>
+		<input type="button" id="restart" value="Начать сначала">
+	</div>
+	<script>
+		let tableEl = document.getElementById('table');
+		let timerEl = document.getElementById('timer');
+		let startEl = document.getElementById('start');
+		let restartEl = document.getElementById('restart');
+		let paused = false;
+		let now = 0;
+		let timer;
+		let rows = 5;
+		let columns = 5;
+		let time = 60;
+		startEl.addEventListener('click', gameStart);
+		restartEl.addEventListener('click', gameRestart);
+		tableEl.addEventListener('click', init);
+		function gameStart() {
+            paused = false;
+            time = 60;
+			startEl.style.display = 'none';
+			restartEl.style.display = 'block';
+			create();
+			timerEl.innerHTML = 'Времени осталось: ' + time;
+			timer = setInterval(timeStep, 1000);
+		}
+		function gameRestart() {
+			now = 0;
+			clearInterval(timer);
+			gameStart();
+		}
+		function timeStep() {
+			time--;
+			if (time > 0) {
+				timerEl.innerHTML = 'Времени осталось: ' + time;
+			} else {
+				clearInterval(timer);
+				timerEl.innerHTML = 'Вы проиграли';
+				paused = true;
+			}
+		}
+		function init(event) {
+			let t = event.target;
+			let check = t.classList.contains('td') &&
+				!t.classList.contains('select') && !paused;
+			if (check) {
+				let val = +t.innerHTML;
+				if (val === now + 1) {
+					now += 1;
+					t.classList.add('select');
+					if (val === rows * columns) {
+						timerEl.innerHTML = 'Вы выиграли';
+						clearInterval(timer);
+					}
+				}	
+			}
+		}
+		function create() {
+			let numbers = getNumbers();
+			let html = '';
+			for (let i = 0; i < rows; i++) {
+				html += '<tr>';
+					for (var j = 0; j < columns; j++) {
+						html += '<td class="td" style="' 
+							+ getRandomStyle() + '">' 
+							+ getRandomNumber(); + '</td>'
+					}
+				html += '</tr>';
+			}
+			tableEl.innerHTML = html;
+			function getRandomNumber() {
+				let n = randomInterval(0, numbers.length - 1);
+				let res = numbers[n]
+				numbers.splice(n, 1);
+				return res;
+			}
+		}
+		function getRandomStyle() {
+			return 'font-size:' + randomInterval(15, 45) + 'px;'
+				+ 'color:' + getRandomColor();
+		}
+		function getNumbers() {
+			let numbers = [];
+			for (var i = 0; i < rows*columns; i++) {
+				numbers[i] = i + 1;
+			}
+			return numbers;
+		}
+		function randomInterval(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		} 
+		function getRandomColor() {
+		  return 'rgb(' + randomInterval(0, 255) + ',' + 
+			randomInterval(0, 255) + ',' + randomInterval(0, 255) + ')';
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.css {
+	position: absolute;
+	background: red;
+	width:30px;
+	height:30px;
+	left: 100px;
+	top: 90px;
+	border:solid red;
+	border-radius: 50%;
+    animation: change-background 4s ease infinite alternate;
+}
+
+#circle {
+	position: absolute; 
+	left: 150px; 
+	top: 145px;  
+	width: 150px; 
+	height: 150px;
+	border:solid red;
+	border-radius: 50%;	
+}
+
+@keyframes change-background {
+    from {
+        background: rgb(254, 0, 0);
+    }
+  
+    to {
+        background: rgb(243, 173, 173);
+    }
+  }

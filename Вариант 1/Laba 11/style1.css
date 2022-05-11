@@ -1,0 +1,18 @@
+
+		input {
+			margin: 5px;
+			padding: 5px;
+			width: 200px;
+		}
+		#complite div{
+            margin: 5px;
+			background: #fff;
+            width: 200px;
+			margin-top: 1px;
+            padding: 5px;
+		}
+		#complite div:hover {
+			background: #eee;
+			cursor: pointer;
+		}
+	

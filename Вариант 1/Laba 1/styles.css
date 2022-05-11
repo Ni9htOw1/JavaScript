@@ -1,0 +1,30 @@
+.h{ 
+	text-align: center;
+	color: red;
+	}
+	
+pre{ 
+	text-align: center; 
+	font-family: "Times New Roman";
+	}
+	
+h3{
+	font-style:bold;
+	}
+	
+sup{
+	color: blue
+	}
+	
+.bl{
+	padding-left:50;
+	}
+	
+.bl1{
+	padding-left:25;
+	}
+	
+p{
+	line-height:0;
+	}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <input type="text" id="inp">
+    <input type="button" onclick="func(this)" value="список">
+    <ul></ul>
+    <script>
+        let inp = document.getElementById('inp');
+        let list = document.querySelector('ul');
+        function func(){
+            let countries = inp.value;
+            let mass = countries.split(',');
+            let li;
+            list.innerHTML = '';
+            for (let i = 0; i < mass.length; i++){
+                li = document.createElement('li');
+                li.innerHTML = mass[i];
+                list.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

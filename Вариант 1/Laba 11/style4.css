@@ -1,0 +1,23 @@
+#calendar {
+    margin-top: 10px;
+    text-align: center;
+}
+.controls {
+    text-align: center;
+}
+.day {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 2px;
+    border: 1px solid #000;
+    text-align: center;
+}
+.day.today {
+    background: #000;
+    color: #fff;
+}
+#date {
+    margin-top: 10px;
+}

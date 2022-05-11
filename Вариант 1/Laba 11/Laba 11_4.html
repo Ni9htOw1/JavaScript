@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>	
+	<div class="controls">
+		<input type="button" id="prev" value="Предыдущий месяй">
+		<input type="button" id="next" value="Следующий месяц">
+		<div id="date"></div>
+	</div>
+	<div id="calendar"></div>
+	<script>
+		let calendar = document.getElementById('calendar');
+		let dateEl = document.getElementById('date');
+		let prevEl = document.getElementById('prev');
+		let nextEl = document.getElementById('next');
+		let deferentMonth = 0;
+		let MONTHS = [
+			'Январь','Февраль','Март','Апрель', 
+			'Май','Июнь','Июль','Август',
+			'Сентябрь','Октябрь','Ноябрь','Декабрь'
+		];
+		create();
+		prevEl.addEventListener('click', prev);
+		nextEl.addEventListener('click', next);
+		function prev() {
+			deferentMonth--;
+			create();
+		}
+		function next() {
+			deferentMonth++;
+			create();
+		}
+		function create() {
+			let d = new Date();	
+			d.setMonth(d.getMonth() + deferentMonth);
+			let year = d.getFullYear();
+			let month = d.getMonth();
+			let dayCount = (new Date(year, month + 1, 0)).getDate();
+			let today = null;
+			if (deferentMonth === 0) {
+				today = d.getDate();
+			}
+			printDate(d);
+			generate(dayCount, today);
+		}
+		function generate(count, today) {
+			let html = '';
+			for (let i = 1; i <= count; i++) {
+				let cl = 'day';
+				if (i === today) {
+					cl += ' today';
+				}
+				html += '<div class="' + cl + '">' + i + '</div>';
+			}
+			calendar.innerHTML = html;
+		}
+		function printDate(d) {
+			dateEl.innerHTML = d.getFullYear() + ' ' 
+				+ MONTHS[d.getMonth()];
+		}
+	</script>
+</body>
+</html>

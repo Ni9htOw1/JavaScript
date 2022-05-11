@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+<body>
+    <table id="field">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <p id="step">Ходит: X</p>
+    <input type="button" id="rest" value="Начать сначала" onclick="restart(this)">
+    <div class="result">
+        <p id="X">Выиграл X: <span id="x"></p>
+        <p id="O">Выиграл O: <span id="o"></p>
+        <p id="N">Ничья: <span id="n"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
